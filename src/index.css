@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
     font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
     line-height: 1.5;
@@ -11,6 +15,11 @@
     text-rendering: optimizeLegibility;
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
+    --mainBg: #faffaf;
+    --primary: #0f67b1;
+    --skyBlue: #3fa2f6;
+    --lightBlue: #96c9f4;
 }
 
 a {
@@ -28,6 +37,8 @@ body {
     place-items: center;
     min-width: 320px;
     min-height: 100vh;
+    background-color: var(--mainBg);
+    color: var(--primary);
 }
 
 h1 {
