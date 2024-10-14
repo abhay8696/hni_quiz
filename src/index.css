@@ -66,6 +66,33 @@ button:focus-visible {
     outline: 4px auto -webkit-focus-ring-color;
 }
 
+input[type="radio"] {
+    appearance: none; /* Remove default style */
+    width: 20px; /* Custom size */
+    height: 20px; /* Custom size */
+    border: 2px solid #00000086; /* Border color */
+    border-radius: 50%; /* Circle shape */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Pointer on hover */
+    position: relative; /* Positioning for pseudo-elements */
+    margin-right: 10px; /* Space between radio and label */
+}
+
+input[type="radio"]:checked {
+    background-color: #00000086; /* Background color when checked */
+}
+
+input[type="radio"]:checked::after {
+    content: ""; /* Add inner circle */
+    position: absolute;
+    top: 3px; /* Center vertically */
+    left: 3px; /* Center horizontally */
+    width: 10px; /* Inner circle size */
+    height: 10px; /* Inner circle size */
+    border-radius: 50%; /* Circle shape */
+    background: #00000086; /* Inner circle color */
+}
+
 @media (prefers-color-scheme: light) {
     :root {
         color: #213547;

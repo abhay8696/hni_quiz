@@ -554,6 +554,23 @@ video {
   display: none;
 }
 
+.fixed {
+  position: fixed;
+}
+
+.m-4 {
+  margin: 1rem;
+}
+
+.my-4 {
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+
+.ml-4 {
+  margin-left: 1rem;
+}
+
 .block {
   display: block;
 }
@@ -598,6 +615,10 @@ video {
   align-items: center;
 }
 
+.items-baseline {
+  align-items: baseline;
+}
+
 .justify-center {
   justify-content: center;
 }
@@ -606,16 +627,16 @@ video {
   justify-content: space-around;
 }
 
+.gap-12 {
+  gap: 3rem;
+}
+
 .gap-16 {
   gap: 4rem;
 }
 
-.gap-8 {
-  gap: 2rem;
-}
-
-.gap-12 {
-  gap: 3rem;
+.gap-2 {
+  gap: 0.5rem;
 }
 
 .gap-32 {
@@ -626,8 +647,16 @@ video {
   gap: 1rem;
 }
 
+.gap-8 {
+  gap: 2rem;
+}
+
 .overflow-hidden {
   overflow: hidden;
+}
+
+.rounded-xl {
+  border-radius: 0.75rem;
 }
 
 .border {
@@ -636,6 +665,10 @@ video {
 
 .border-b {
   border-bottom-width: 1px;
+}
+
+.border-\[\#00000086\] {
+  border-color: #00000086;
 }
 
 .border-primary {
@@ -647,9 +680,13 @@ video {
   background-color: inherit;
 }
 
-.bg-red-300 {
+.bg-red-400 {
   --tw-bg-opacity: 1;
-  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
+  background-color: rgb(248 113 113 / var(--tw-bg-opacity));
+}
+
+.p-4 {
+  padding: 1rem;
 }
 
 .py-1 {
@@ -657,8 +694,18 @@ video {
   padding-bottom: 0.25rem;
 }
 
+.py-4 {
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+
 .text-left {
   text-align: left;
+}
+
+.text-h1 {
+  font-size: 3.1875rem;
+  line-height: 3.5rem;
 }
 
 .text-h2 {
@@ -676,21 +723,21 @@ video {
   line-height: 1.75rem;
 }
 
-.text-h1 {
-  font-size: 3.1875rem;
-  line-height: 3.5rem;
+.text-h6 {
+  font-size: 1rem;
+  line-height: 1.5rem;
 }
 
-.font-extralight {
-  font-weight: 200;
-}
-
-.font-thin {
-  font-weight: 100;
+.font-bold {
+  font-weight: 700;
 }
 
 .font-light {
   font-weight: 300;
+}
+
+.font-thin {
+  font-weight: 100;
 }
 
 .capitalize {
@@ -769,6 +816,52 @@ button:hover {
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
+}
+
+input[type="radio"] {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  /* Remove default style */
+  width: 20px;
+  /* Custom size */
+  height: 20px;
+  /* Custom size */
+  border: 2px solid #00000086;
+  /* Border color */
+  border-radius: 50%;
+  /* Circle shape */
+  outline: none;
+  /* Remove outline */
+  cursor: pointer;
+  /* Pointer on hover */
+  position: relative;
+  /* Positioning for pseudo-elements */
+  margin-right: 10px;
+  /* Space between radio and label */
+}
+
+input[type="radio"]:checked {
+  background-color: #00000086;
+  /* Background color when checked */
+}
+
+input[type="radio"]:checked::after {
+  content: "";
+  /* Add inner circle */
+  position: absolute;
+  top: 3px;
+  /* Center vertically */
+  left: 3px;
+  /* Center horizontally */
+  width: 10px;
+  /* Inner circle size */
+  height: 10px;
+  /* Inner circle size */
+  border-radius: 50%;
+  /* Circle shape */
+  background: #00000086;
+  /* Inner circle color */
 }
 
 @media (prefers-color-scheme: light) {

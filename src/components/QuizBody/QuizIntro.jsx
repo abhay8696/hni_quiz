@@ -24,7 +24,7 @@ const QuizIntro = () => {
                 </div>
                 <Button
                     text="let's go"
-                    clickFunction={() => scrollToElement("quiz-1")}
+                    clickFunction={() => scrollToElement("que-1")}
                 />
             </div>
         </div>
