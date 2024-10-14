@@ -17,7 +17,8 @@
     -moz-osx-font-smoothing: grayscale;
 
     --mainBg: #faffaf;
-    --primary: #0f67b1;
+    --primary: #000;
+    /* --primary: #0f67b1; */
     --skyBlue: #3fa2f6;
     --lightBlue: #96c9f4;
 }
