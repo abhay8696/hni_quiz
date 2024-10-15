@@ -5,7 +5,7 @@ import { questionsArray } from "../../QuestionsArray";
 
 const QuizQuestion = (props) => {
     //props
-    const { queID, data, queNo } = props;
+    const { queID, data, queNo, maxQuestions } = props;
 
     const introButton = (
         <Button
@@ -70,7 +70,7 @@ const QuizQuestion = (props) => {
                 </div>
                 <div className="flex gap-4">
                     {queNo > 1 ? preButton : introButton}
-                    {queNo < questionsArray.length ? nextButton : finishButton}
+                    {queNo < maxQuestions ? nextButton : finishButton}
                 </div>
             </div>
         </div>
