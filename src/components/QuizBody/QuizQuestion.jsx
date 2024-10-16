@@ -1,11 +1,16 @@
-import React from "react";
+import React, { useContext } from "react";
 import Button from "../Button/Button";
 import { scrollToElement } from "../../helperFunctions";
-import { questionsArray } from "../../QuestionsArray";
+import { RandomQuestionsContext } from "../../Contexts/AllContexts";
 
 const QuizQuestion = (props) => {
     //props
-    const { queID, data, queNo, maxQuestions } = props;
+    const { queID, data, queNo, maxQuestions, uid } = props;
+
+    //contexts
+    const [randomQuestions, setRandomQuestions] = useContext(
+        RandomQuestionsContext
+    );
 
     const introButton = (
         <Button
@@ -28,23 +33,37 @@ const QuizQuestion = (props) => {
     );
 
     const finishButton = (
-        <Button
-            text="Finish"
-            clickFunction={() => scrollToElement(`que-${queNo + 1}`)}
-        />
+        <Button text="Finish" clickFunction={() => scrollToElement(`result`)} />
     );
+
+    const handleChange = (event) => {
+        //update context with selected option
+        let updatedArr = [...randomQuestions];
+
+        let thisQuestion = updatedArr.find((q) => q.uid === uid);
+
+        if (thisQuestion) thisQuestion.selectedAnswer = event.target.value;
+
+        setRandomQuestions([...updatedArr]);
+    };
+
+    const setValue = (value) => {
+        let thisQuestion = updatedArr.find((q) => q.uid === uid);
+        return String(thisQuestion.selectedAnswer) === String(value);
+    };
 
     const radioButton = (value, id) => {
         return (
-            <div className="flex items-center border border-[#00000086] rounded-xl">
+            <div className="flex items-center border border-[#00000086] rounded-xl min-w-[75vw] sm:min-w-[500px] ">
                 <input
                     type="radio"
                     id={id}
-                    name={`${queID}Option`}
+                    name={`${queID}-option`}
                     value={value}
                     className="my-4 ml-4"
+                    onChange={handleChange}
                 />
-                <label for={id} className="flex-1 py-4 border rounded-xl">
+                <label for={id} className="flex-1 py-4">
                     {value}
                 </label>
             </div>

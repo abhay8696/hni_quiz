@@ -1,37 +1,24 @@
 import React, { useContext, useState } from "react";
-//contexts
-import { UserDataContext } from "../../Contexts/AllContexts";
 //components
 import Button from "../Button/Button";
 import QuizIntro from "./QuizIntro";
 import QuizQuestion from "./QuizQuestion";
 import { questionsArray } from "../../QuestionsArray";
+import Result from "../Result/Result";
+import { RandomQuestionsContext } from "../../Contexts/AllContexts";
 
 const QuizBody = () => {
+    //contexts
+    const [randomQuestions, setRandomQuestions] = useContext(
+        RandomQuestionsContext
+    );
+
     //functions
-    const selectFiveRandom = () => {
-        let newQueArr = [...questionsArray];
-        let len = 0;
-        let randomFive = [];
-
-        while (len < 5) {
-            const index = Math.floor(Math.random() * newQueArr.length);
-            let que = newQueArr.splice(index, 1)[0];
-            len++;
-            randomFive.push(que);
-        }
-        // setTempArr([...randomFive]);
-
-        return randomFive;
-    };
 
     const displayQuestions = () => {
-        let arr = selectFiveRandom();
-        console.log(arr);
-        if (!arr || !arr.length) arr = [];
         let queNO = 1;
 
-        return arr.map((que) => {
+        return randomQuestions.map((que) => {
             return (
                 <QuizQuestion
                     data={que}
@@ -39,6 +26,7 @@ const QuizBody = () => {
                     key={`que-${queNO}`}
                     queNo={queNO++}
                     maxQuestions={5}
+                    uid={que.uid}
                 />
             );
         });
@@ -47,6 +35,7 @@ const QuizBody = () => {
         <div className="h-[100vh]" id="QuizBody">
             <QuizIntro />
             {displayQuestions()}
+            <Result />
         </div>
     );
 };

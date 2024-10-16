@@ -1,5 +1,8 @@
+import { v4 as uuidv4 } from "uuid";
+
 export const questionsArray = [
     {
+        uid: uuidv4(),
         que: "Who is governor of RBI?",
         options: {
             a: "Shaktikanta Das",
@@ -10,6 +13,7 @@ export const questionsArray = [
         answer: "Shaktikanta Das",
     },
     {
+        uid: uuidv4(),
         que: "What is the full form of CAGR?",
         options: {
             a: "Compound Average Growth Rate",
@@ -20,6 +24,7 @@ export const questionsArray = [
         answer: "Compound Annual Growth Rate",
     },
     {
+        uid: uuidv4(),
         que: "The size of the mutual fund industry in India?",
         options: {
             a: "₹10 trillion",
@@ -30,6 +35,7 @@ export const questionsArray = [
         answer: "₹40 trillion",
     },
     {
+        uid: uuidv4(),
         que: "What is the full form of ULIP?",
         options: {
             a: "Unified Life Investment Plan",
@@ -40,6 +46,7 @@ export const questionsArray = [
         answer: "Unit Linked Insurance Plan",
     },
     {
+        uid: uuidv4(),
         que: "What is the minimum ticket size in PMS?",
         options: {
             a: "₹10 lakh",
@@ -50,6 +57,7 @@ export const questionsArray = [
         answer: "₹50 lakh",
     },
     {
+        uid: uuidv4(),
         que: "What is the minimum ticket size in AIF?",
         options: {
             a: "₹25 lakh",
@@ -60,6 +68,7 @@ export const questionsArray = [
         answer: "₹1 crore",
     },
     {
+        uid: uuidv4(),
         que: "What is GDP?",
         options: {
             a: "Gross Domestic Product",
@@ -70,6 +79,7 @@ export const questionsArray = [
         answer: "Gross Domestic Product",
     },
     {
+        uid: uuidv4(),
         que: "India is __ largest economy in the world?",
         options: {
             a: "3rd",
@@ -80,6 +90,7 @@ export const questionsArray = [
         answer: "5th",
     },
     {
+        uid: uuidv4(),
         que: "What is India’s population?",
         options: {
             a: "1.2 billion",
@@ -90,6 +101,7 @@ export const questionsArray = [
         answer: "1.4 billion",
     },
     {
+        uid: uuidv4(),
         que: "Which of the following is not part of Nifty 50?",
         options: {
             a: "Reliance Industries",
@@ -100,6 +112,7 @@ export const questionsArray = [
         answer: "Tesla",
     },
     {
+        uid: uuidv4(),
         que: "What is SIP, STP & SWP?",
         options: {
             a: "Mutual fund schemes",
@@ -110,6 +123,7 @@ export const questionsArray = [
         answer: "Mutual fund schemes",
     },
     {
+        uid: uuidv4(),
         que: "Emergency fund should ideally cover how many months of expenses?",
         options: {
             a: "3 months",
@@ -120,6 +134,7 @@ export const questionsArray = [
         answer: "6 months",
     },
     {
+        uid: uuidv4(),
         que: "Multi Asset Fund invests in which categories?",
         options: {
             a: "Stocks only",
@@ -130,6 +145,7 @@ export const questionsArray = [
         answer: "Stocks, Bonds, and Gold",
     },
     {
+        uid: uuidv4(),
         que: "What is Expense Ratio?",
         options: {
             a: "Ratio of expenses to profit",
@@ -140,6 +156,7 @@ export const questionsArray = [
         answer: "Fees charged by mutual funds",
     },
     {
+        uid: uuidv4(),
         que: "What is Exit Load?",
         options: {
             a: "Fee for switching funds",
@@ -150,6 +167,7 @@ export const questionsArray = [
         answer: "Penalty for early withdrawal",
     },
     {
+        uid: uuidv4(),
         que: "What is the primary purpose of insurance?",
         options: {
             a: "To save taxes",
@@ -160,6 +178,7 @@ export const questionsArray = [
         answer: "To provide financial protection",
     },
     {
+        uid: uuidv4(),
         que: "What is considered a good credit score?",
         options: {
             a: "300-500",
@@ -170,6 +189,7 @@ export const questionsArray = [
         answer: "700-900",
     },
     {
+        uid: uuidv4(),
         que: "Which of these is an appreciating asset?",
         options: {
             a: "Car",
@@ -180,6 +200,7 @@ export const questionsArray = [
         answer: "Gold",
     },
     {
+        uid: uuidv4(),
         que: "What is Current Ratio?",
         options: {
             a: "Assets divided by liabilities",
@@ -190,6 +211,7 @@ export const questionsArray = [
         answer: "Assets divided by liabilities",
     },
     {
+        uid: uuidv4(),
         que: "Which of these are liquid assets?",
         options: {
             a: "Real estate",

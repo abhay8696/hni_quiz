@@ -554,8 +554,24 @@ video {
   display: none;
 }
 
-.fixed {
-  position: fixed;
+.absolute {
+  position: absolute;
+}
+
+.relative {
+  position: relative;
+}
+
+.bottom-\[-0rem\] {
+  bottom: -0rem;
+}
+
+.bottom-\[-1\] {
+  bottom: -1;
+}
+
+.bottom-\[1\] {
+  bottom: 1;
 }
 
 .my-4 {
@@ -589,6 +605,30 @@ video {
 
 .w-\[100px\] {
   width: 100px;
+}
+
+.w-\[50px\] {
+  width: 50px;
+}
+
+.min-w-\[500px\] {
+  min-width: 500px;
+}
+
+.min-w-\[95vw\] {
+  min-width: 95vw;
+}
+
+.min-w-\[90vw\] {
+  min-width: 90vw;
+}
+
+.min-w-\[75vw\] {
+  min-width: 75vw;
+}
+
+.max-w-\[95vw\] {
+  max-width: 95vw;
 }
 
 .flex-1 {
@@ -672,8 +712,23 @@ video {
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
 }
 
+.border-red-600 {
+  --tw-border-opacity: 1;
+  border-color: rgb(220 38 38 / var(--tw-border-opacity));
+}
+
 .bg-inherit {
   background-color: inherit;
+}
+
+.bg-green-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(134 239 172 / var(--tw-bg-opacity));
+}
+
+.bg-red-300 {
+  --tw-bg-opacity: 1;
+  background-color: rgb(252 165 165 / var(--tw-bg-opacity));
 }
 
 .py-1 {
@@ -734,6 +789,11 @@ video {
 .text-black {
   --tw-text-opacity: 1;
   color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+.text-red-600 {
+  --tw-text-opacity: 1;
+  color: rgb(220 38 38 / var(--tw-text-opacity));
 }
 
 .outline-none {
@@ -869,6 +929,10 @@ input[type="radio"]:checked::after {
 }
 
 @media (min-width: 640px) {
+  .sm\:min-w-\[500px\] {
+    min-width: 500px;
+  }
+
   .sm\:text-h1 {
     font-size: 3.1875rem;
     line-height: 3.5rem;
