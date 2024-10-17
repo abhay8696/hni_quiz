@@ -64,7 +64,11 @@ const Result = () => {
                 fullName.firstName || "buddy"
             }, you could do better`;
         else if (score >= 1)
-            msg = `Better Luck next time ${fullName.firstName || "buddy"} :(`;
+            msg = `Better Luck next time ${fullName.firstName || "Doc"} :(`;
+        else
+            msg = `You need some financial classes ${
+                fullName.firstName || "Doc..."
+            } :(`;
 
         setResult({ msg, score });
     };
