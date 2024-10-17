@@ -4,12 +4,13 @@ import { UserDataContext } from "../../Contexts/AllContexts";
 //components
 import Button from "../Button/Button";
 import { scrollToElement } from "../../helperFunctions";
+import BGIMG from "../BGIMG/BGIMG";
 
 const QuizIntro = () => {
     //contexts
     const [fullName, setFullName] = useContext(UserDataContext);
     return (
-        <div className="h-[100vh] flex items-center" id="QuizBody">
+        <div className="h-[100vh] flex items-center p-[2rem]" id="QuizBody">
             <div className="h-[75vh] text-left flex flex-col justify-center gap-32">
                 <h1 className="capitalize text-h1">
                     Hello {fullName.firstName}!

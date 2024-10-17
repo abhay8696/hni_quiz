@@ -70,15 +70,15 @@ const QuizQuestion = (props) => {
         );
     };
     return (
-        <div className="h-[100vh] flex items-center" id={queID}>
-            <div className="h-[75vh] text-left flex flex-col justify-center gap-16">
-                <div className="flex flex-col gap-16">
+        <div className="p-[2rem] h-[100vh] flex items-center" id={queID}>
+            <div className="h-[75vh] text-left flex flex-col justify-center gap-8">
+                <div className="flex flex-col gap-8">
                     <div className="flex flex-col items-baseline gap-2">
                         <h6 className="capitalize text-h6">{`Q.${queNo} `}</h6>
-                        <h2 className="text-h2 font-thin">
+                        <h3 className="text-h3 font-thin">
                             {/* <span className="font-bold">{`Q.${queNo}) `}</span> */}
                             {data.que}
-                        </h2>
+                        </h3>
                     </div>
                     <div className="flex flex-col gap-4">
                         {radioButton(data.options.a, `${queID}-optionA`)}

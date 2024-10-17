@@ -59,14 +59,11 @@ const Result = () => {
             msg = `Excellent Job ${
                 fullName.firstName || "buddy"
             }! You got all answers correct.`;
-        else if (score >= 3)
-            msg = `Good Job ${
-                fullName.firstName || "buddy"
-            }, you could do better`;
+        else if (score >= 3) msg = `Good Job ${fullName.firstName || "buddy"}!`;
         else if (score >= 1)
             msg = `Better Luck next time ${fullName.firstName || "Doc"} :(`;
         else
-            msg = `You need some financial classes ${
+            msg = `I know you can do better, ${
                 fullName.firstName || "Doc..."
             } :(`;
 
@@ -87,8 +84,8 @@ const Result = () => {
     };
 
     return (
-        <div className="h-[100vh] flex items-center" id={"result"}>
-            <div className="h-[75vh] text-left flex flex-col justify-center gap-16">
+        <div className="p-[2rem] h-[100vh] flex items-center" id={"result"}>
+            <div className="min-h-[75vh] text-left flex flex-col justify-center gap-8">
                 <h1 onClick={() => console.log(randomQuestions)}>
                     {result.msg}
                 </h1>

@@ -1,5 +1,8 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
+//styles
+import "./UserForm.css";
+import BGIMG from "../BGIMG/BGIMG";
 
 const UserForm = (props) => {
     //props
@@ -27,17 +30,28 @@ const UserForm = (props) => {
         else handleUserForm(fullName);
     };
     return (
+        // <div className="userForm-wrapper bg-red-300 w-[100vw]">
         <div
-            className="h-[100vh] flex items-center justify-center"
+            className="relative h-[100vh] w-[100vw] flex items-center justify-center gap-4"
             id="userForm"
+            style={{
+                background: `url(https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22594_16539922388967007.jpg)`,
+                backgroundSize: "cover",
+                backgroundPosition: "top center",
+                backgroundRepeat: "no-repeat",
+            }}
         >
-            <div className="flex flex-col justify-around h-[75vh]">
+            <div className="userForm-body flex flex-col justify-around h-[75vh] ">
                 <h1 className="text-h2 sm:text-h1 text-left">
-                    Welcome to HNI Quiz!
+                    <span className="bg-mainBg border rounded-xl px-4 py-2">
+                        Welcome to HNI Quiz!
+                    </span>
                 </h1>
                 <div className="flex flex-col justify-center gap-8 flex-1">
-                    <h2 className="text-h3 sm:text-h2  text-left">
-                        What is your name?
+                    <h2 className="text-h3 sm:text-h2  text-left font-light">
+                        <span className="bg-mainBg border rounded-xl px-4 py-2">
+                            What is your name?
+                        </span>
                     </h2>
                     <form
                         onSubmit={handleSubmit}
@@ -54,11 +68,9 @@ const UserForm = (props) => {
                                     placeholder="First Name"
                                     required
                                     autoComplete="off"
-                                    className={`text-black capitalize text-h5 sm:text-h4 py-1 bg-inherit border-b ${
-                                        err
-                                            ? "border-red-600"
-                                            : "border-primary"
-                                    } outline-none`}
+                                    className={`text-black capitalize  sm:text-h4  bg-inherit border-b ${
+                                        err ? "bg-red-600" : "bg-mainBg"
+                                    } outline-none rounded-xl p-2`}
                                 />
                                 <p className="absolute text-left text-red-600">
                                     {err && "First name is required"}
@@ -72,20 +84,24 @@ const UserForm = (props) => {
                                     value={fullName.lastName}
                                     onChange={handleChange}
                                     placeholder="Last Name"
-                                    className={`text-black capitalize text-h5 sm:text-h4 py-1 bg-inherit border-b border-primary outline-none`}
+                                    className={`text-black capitalize  sm:text-h4 p-2 bg-inherit border bg-mainBg rounded-xl  outline-none`}
                                 />
                             </div>
                         </div>
-                        <Button
-                            text="submit"
-                            formButton={true}
-                            clickFunction={handleSubmit}
-                        />
+                        <div className="flex justify-center">
+                            <Button
+                                text="submit"
+                                formButton={true}
+                                clickFunction={handleSubmit}
+                                customClass="bg-black text-mainBg"
+                            />
+                        </div>
                     </form>
                     <div>.</div>
                 </div>
             </div>
         </div>
+        // </div>
     );
 };
 
