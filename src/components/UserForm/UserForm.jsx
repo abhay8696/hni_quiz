@@ -77,7 +77,7 @@ const UserForm = (props) => {
                             </div>
                         </div>
                         <Button
-                            text="submit"
+                            text="Submit"
                             formButton={true}
                             clickFunction={handleSubmit}
                         />
