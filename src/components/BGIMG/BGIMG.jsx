@@ -1,17 +1,14 @@
 import React from "react";
 
-const BGIMG = ({ url }) => {
+const BGIMG = ({ url, customClass }) => {
     return (
         <div
-            className="flex-1 h-[100vh] top-0 bottom-0"
+            className={`flex-1 top-0 bottom-0 ${customClass}`}
             style={{
                 background: `url(${url})`,
                 backgroundSize: "contain",
-                backgroundPosition: "center",
+                backgroundPosition: "bottom right",
                 backgroundRepeat: "no-repeat",
-                // position: "absolute",
-                top: 0,
-                right: 0,
             }}
         ></div>
     );

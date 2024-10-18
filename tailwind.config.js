@@ -18,6 +18,13 @@ export default {
                 h5: ["1.25rem", { lineHeight: "1.75rem" }], // 20px
                 h6: ["1rem", { lineHeight: "1.5rem" }], // 16px
             },
+            boxShadow: {
+                custom: "2px 2px 5px 0px rgba(0, 0, 0, 0.75)",
+            },
+            zIndex: {
+                "-1": "-1",
+                100: "100",
+            },
         },
     },
     plugins: [],

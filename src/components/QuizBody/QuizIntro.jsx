@@ -10,8 +10,20 @@ const QuizIntro = () => {
     //contexts
     const [fullName, setFullName] = useContext(UserDataContext);
     return (
-        <div className="h-[100vh] flex items-center p-[2rem]" id="QuizBody">
-            <div className="h-[75vh] text-left flex flex-col justify-center gap-32">
+        <div
+            className="relative h-[100vh] flex items-center p-[2rem]"
+            id="QuizBody"
+        >
+            <div
+                className="absolute h-[100vh] w-[50vw] right-0 p-0 m-0"
+                style={{
+                    background: `url(https://media.istockphoto.com/id/1181024482/photo/medical-finance-insurance.jpg?s=612x612&w=0&k=20&c=vFUgCpg5RMQwgbZSds6A5oZKP1Vn-cdwtAOW6DwxY5A=)`,
+                    backgroundSize: "contain",
+                    backgroundPosition: "bottom",
+                    backgroundRepeat: "no-repeat",
+                }}
+            ></div>
+            <div className="absolute h-[75vh] text-left flex flex-col justify-center gap-32">
                 <h1 className="capitalize text-h1">
                     Hello {fullName.firstName}!
                 </h1>

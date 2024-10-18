@@ -2,10 +2,11 @@ import React, { useContext } from "react";
 import Button from "../Button/Button";
 import { scrollToElement } from "../../helperFunctions";
 import { RandomQuestionsContext } from "../../Contexts/AllContexts";
+import BGIMG from "../BGIMG/BGIMG";
 
 const QuizQuestion = (props) => {
     //props
-    const { queID, data, queNo, maxQuestions, uid } = props;
+    const { queID, data, queNo, maxQuestions, uid, bgUrl } = props;
 
     //contexts
     const [randomQuestions, setRandomQuestions] = useContext(
@@ -92,6 +93,7 @@ const QuizQuestion = (props) => {
                     {queNo < maxQuestions ? nextButton : finishButton}
                 </div>
             </div>
+            <BGIMG url={bgUrl} />
         </div>
     );
 };
