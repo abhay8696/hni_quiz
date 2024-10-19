@@ -12,7 +12,11 @@ import Result from "./components/Result/Result";
 import { questionsArray } from "./QuestionsArray";
 
 function App() {
-    const [fullName, setFullName] = useState({ firstName: "", lastName: "" });
+    const [fullName, setFullName] = useState({
+        firstName: "",
+        lastName: "",
+        contact: "",
+    });
     const [randomQuestions, setRandomQuestions] = useState([]);
 
     //functions

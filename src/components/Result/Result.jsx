@@ -7,7 +7,11 @@ import {
 //components
 import Button from "../Button/Button";
 //helper functions
-import { scrollToElement } from "../../helperFunctions";
+import {
+    scrollToElement,
+    sendMessageToGuest,
+    sendMessageToOwner,
+} from "../../helperFunctions";
 //assets
 import emptyStar from "../../assets/emptyStar.svg";
 import filledStar from "../../assets/filledStar.svg";
@@ -83,6 +87,17 @@ const Result = () => {
         return arr;
     };
 
+    const finishButton = (
+        <Button text="Finish" clickFunction={() => scrollToElement(`outro`)} />
+    );
+
+    const answersButton = (
+        <Button
+            text="Answers"
+            clickFunction={() => scrollToElement(`Answers`)}
+        />
+    );
+
     return (
         <div className="p-[2rem] h-[100vh] flex items-center" id={"result"}>
             <div className="min-h-[75vh] text-left flex flex-col justify-center gap-8">
@@ -99,7 +114,10 @@ const Result = () => {
                     <div className="flex gap-4">{displayStars()}</div>
                     <p className="font-thin">{result.score} / 5</p>
                 </div>
-                <div className="flex gap-4"></div>
+                <div className="flex gap-4">
+                    {finishButton}
+                    {answersButton}
+                </div>
             </div>
         </div>
     );

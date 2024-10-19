@@ -6,6 +6,8 @@ import QuizQuestion from "./QuizQuestion";
 import { questionsArray } from "../../QuestionsArray";
 import Result from "../Result/Result";
 import { RandomQuestionsContext } from "../../Contexts/AllContexts";
+import Answers from "../Answers/Answers";
+import Outro from "../Outro/Outro";
 
 const QuizBody = () => {
     //contexts
@@ -46,6 +48,8 @@ const QuizBody = () => {
             <QuizIntro />
             {displayQuestions()}
             <Result />
+            <Answers />
+            <Outro />
         </div>
     );
 };

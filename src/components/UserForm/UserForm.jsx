@@ -6,24 +6,36 @@ const UserForm = (props) => {
     const { handleUserForm } = props;
 
     //states
-    const [fullName, setFullName] = useState({ firstName: "", lastName: "" });
-    const [err, SetErr] = useState(false);
+    const [fullName, setFullName] = useState({
+        firstName: "",
+        lastName: "",
+        contact: "",
+    });
+    const [nameError, SetNameError] = useState(false);
+    const [contactError, SetContactError] = useState(false);
 
     //functions
     const handleChange = (event) => {
         const { name, value } = event.target;
-        if (name === "firstName") SetErr(false);
+        if (name === "firstName") SetNameError(false);
+        if (name === "contact") SetContactError(false);
         setFullName({ ...fullName, [name]: value });
     };
 
-    const notValidInput = (input) => {
+    const notValidName = (input) => {
         // Trim the input to remove leading/trailing spaces and check if it's empty
         return input.trim().length <= 0;
     };
 
+    const notValidContact = (input) => {
+        // Trim the input to remove leading/trailing spaces and check if it's empty
+        return String(input).length !== 10;
+    };
+
     const handleSubmit = (event) => {
         event.preventDefault();
-        if (notValidInput(fullName.firstName)) SetErr(true);
+        if (notValidName(fullName.firstName)) SetNameError(true);
+        else if (notValidContact(fullName.contact)) SetContactError(true);
         else handleUserForm(fullName);
     };
     return (
@@ -64,13 +76,13 @@ const UserForm = (props) => {
                                     required
                                     autoComplete="off"
                                     className={`text-black capitalize text-h5 sm:text-h4 py-1 bg-inherit border-b ${
-                                        err
+                                        nameError
                                             ? "border-red-600"
                                             : "border-primary"
                                     } outline-none`}
                                 />
                                 <p className="absolute text-left text-red-600">
-                                    {err && "First name is required"}
+                                    {nameError && "First name is required"}
                                 </p>
                             </div>
                             <div>
@@ -80,9 +92,30 @@ const UserForm = (props) => {
                                     id="lastName"
                                     value={fullName.lastName}
                                     onChange={handleChange}
+                                    autoComplete="off"
                                     placeholder="Last Name"
                                     className={`text-black capitalize text-h5 sm:text-h4 py-1 bg-inherit border-b border-primary outline-none`}
                                 />
+                            </div>
+                            <div className="relative">
+                                <input
+                                    type="number"
+                                    name="contact"
+                                    id="contact"
+                                    value={fullName.contact}
+                                    onChange={handleChange}
+                                    placeholder="Contact"
+                                    required
+                                    autoComplete="off"
+                                    className={`text-black capitalize text-h5 sm:text-h4 py-1 bg-inherit border-b ${
+                                        contactError
+                                            ? "border-red-600"
+                                            : "border-primary"
+                                    } outline-none`}
+                                />
+                                <p className="absolute text-left text-red-600">
+                                    {contactError && "Enter a valid Contact"}
+                                </p>
                             </div>
                         </div>
                         <Button
