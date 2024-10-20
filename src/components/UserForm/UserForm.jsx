@@ -7,9 +7,9 @@ const UserForm = (props) => {
 
     //states
     const [fullName, setFullName] = useState({
-        firstName: "abhay",
-        lastName: "k",
-        contact: "1234567890",
+        firstName: "",
+        lastName: "",
+        contact: "",
     });
     const [nameError, SetNameError] = useState(false);
     const [contactError, SetContactError] = useState(false);
