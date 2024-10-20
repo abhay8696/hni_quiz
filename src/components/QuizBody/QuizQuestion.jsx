@@ -76,7 +76,7 @@ const QuizQuestion = (props) => {
                 <div className="flex flex-col gap-8">
                     <div className="flex flex-col items-baseline gap-2">
                         <h6 className="capitalize text-h6">{`Q.${queNo} `}</h6>
-                        <h3 className="text-h4 md:text-h3 font-thin">
+                        <h3 className="text-h4 md:text-h3">
                             {/* <span className="font-bold">{`Q.${queNo}) `}</span> */}
                             {data.que}
                         </h3>
