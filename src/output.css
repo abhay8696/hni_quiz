@@ -904,7 +904,7 @@ body {
   min-width: 320px;
   min-height: 100vh;
   background-color: var(--mainBg);
-  background-image: url(./assets/mainbg1.png);
+  /* background-image: url(./assets/mainbg1.png); */
   background-position: center;
   color: var(--primary);
 }
