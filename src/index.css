@@ -102,7 +102,7 @@ input[type="radio"]:checked::after {
 }
 
 ::-webkit-scrollbar-thumb {
-    background-color: #888; /* Scrollbar thumb (handle) color */
+    background-color: #88888871; /* Scrollbar thumb (handle) color */
     border-radius: 10px; /* Round the corners */
     border: 3px solid transparent; /* Adds padding around the thumb */
     background-clip: padding-box; /* Prevents border overlap */
@@ -110,7 +110,7 @@ input[type="radio"]:checked::after {
 }
 
 ::-webkit-scrollbar-track {
-    background-color: #f1f1f1; /* Track color */
+    background-color: #ebf090a9; /* Track color */
     border-radius: 10px;
 }
 
