@@ -7,9 +7,9 @@ const UserForm = (props) => {
 
     //states
     const [fullName, setFullName] = useState({
-        firstName: "",
-        lastName: "",
-        contact: "",
+        firstName: "abhay",
+        lastName: "k",
+        contact: "1234567890",
     });
     const [nameError, SetNameError] = useState(false);
     const [contactError, SetContactError] = useState(false);
@@ -40,24 +40,24 @@ const UserForm = (props) => {
     };
     return (
         <div
-            className="p-[2rem] h-[100vh] w-[100vw] flex items-center justify-start relative"
+            className="md:p-[2rem] h-[100vh] w-[100vw] flex items-end md:items-center justify-start relative"
             id="userForm"
         >
             <div
-                className="absolute h-[100vh] w-[50vw] right-0 "
+                className="bgImg-bottom absolute h-[100vh] w-[100vw] md:w-[50vw] right-0 "
                 style={{
                     background: `url(https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22594_16539922388967007.jpg)`,
                     backgroundSize: "contain",
-                    backgroundPosition: "bottom",
+                    backgroundPosition: "top",
                     backgroundRepeat: "no-repeat",
                 }}
             ></div>
-            <div className="absolute flex flex-col justify-around h-[75vh]">
-                <h1 className="text-h2 sm:text-h1 text-left">
+            <div className="px-[1rem] md:px-[0] absolute flex flex-col justify-start h-[60vh] md:h-[75vh] w-[calc(100vw_-_2rem)]">
+                <h1 className="text-h2 sm:text-h1 text-left font-bold">
                     Welcome to HNI Quiz!
                 </h1>
                 <div className="flex flex-col justify-center gap-8 flex-1">
-                    <h2 className="text-h3 sm:text-h2  text-left">
+                    <h2 className="text-h3 sm:text-h2 text-left">
                         What is your name?
                     </h2>
                     <form
@@ -122,6 +122,7 @@ const UserForm = (props) => {
                             text="submit"
                             formButton={true}
                             clickFunction={handleSubmit}
+                            customClass="bg-black md:bg-inherit text-mainBg md:text-black"
                         />
                     </form>
                     <div>.</div>

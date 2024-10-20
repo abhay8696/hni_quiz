@@ -55,7 +55,7 @@ const QuizQuestion = (props) => {
 
     const radioButton = (value, id) => {
         return (
-            <div className="flex items-center border border-[#00000086] rounded-xl min-w-[75vw] sm:min-w-[500px] ">
+            <div className="flex items-center border border-[#00000086] rounded-xl max-w-[calc(100vw_-_2rem)] w-[500px] md:min-w-[500px]">
                 <input
                     type="radio"
                     id={id}
@@ -71,12 +71,12 @@ const QuizQuestion = (props) => {
         );
     };
     return (
-        <div className="p-[2rem] h-[100vh] flex items-center" id={queID}>
-            <div className="h-[75vh] text-left flex flex-col justify-center gap-8">
+        <div className="md:p-[2rem] h-[100vh] flex items-center" id={queID}>
+            <div className="px-[1rem] md:px-[0] h-[75vh] text-left flex flex-col justify-center gap-8">
                 <div className="flex flex-col gap-8">
                     <div className="flex flex-col items-baseline gap-2">
                         <h6 className="capitalize text-h6">{`Q.${queNo} `}</h6>
-                        <h3 className="text-h3 font-thin">
+                        <h3 className="text-h4 md:text-h3 font-thin">
                             {/* <span className="font-bold">{`Q.${queNo}) `}</span> */}
                             {data.que}
                         </h3>
@@ -93,7 +93,7 @@ const QuizQuestion = (props) => {
                     {queNo < maxQuestions ? nextButton : finishButton}
                 </div>
             </div>
-            <BGIMG url={bgUrl} />
+            {/* <BGIMG url={bgUrl} /> */}
         </div>
     );
 };

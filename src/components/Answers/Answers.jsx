@@ -38,7 +38,7 @@ const Answers = () => {
                 }
                 return (
                     <span
-                        className={`${bg} border border-black rounded-xl px-2 py-1`}
+                        className={`${bg} border border-black rounded-xl px-2 py-2`}
                     >
                         {text}
                     </span>
@@ -46,8 +46,8 @@ const Answers = () => {
             };
 
             return (
-                <div className="flex flex-col gap-2">
-                    <h6 className="text-h6 font-bold flex gap-2 items-center">
+                <div className="px-[1rem] md:px-[0] justify-between flex flex-col gap-2 max-w-[calc(100vw_-_2rem)] w-[500px] md:min-w-[500px]">
+                    <h6 className="text-h6 flex items-start">
                         {String(selectedAnswer) === String(answer)
                             ? correctImg
                             : wrongImg}
@@ -68,13 +68,13 @@ const Answers = () => {
     };
 
     return (
-        <div className="p-[2rem] h-[100vh] flex items-center" id="Answers">
+        <div className="md:p-[2rem] h-[100vh] flex items-center" id="Answers">
             <div className="min-h-[75vh] text-left flex flex-col justify-center gap-8">
-                <h1>Answers</h1>
-                <div className="overflow-y-scroll h-[75vh] flex flex-col gap-8">
+                <h1 className="px-[1rem] md:px-[0] ">Answers</h1>
+                <div className="overflow-x-auto h-[75vh] md:h-[auto] flex flex-col md:flex-row gap-8 w-[calc(100vw_-_1rem)] md:w-[calc(100vw_-_4rem)]">
                     {displayQuestions()}
-                    {finishButton}
                 </div>
+                <div className="px-[1rem] md:px-[0]">{finishButton}</div>
             </div>
         </div>
     );

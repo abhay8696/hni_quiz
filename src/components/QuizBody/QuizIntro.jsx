@@ -11,11 +11,11 @@ const QuizIntro = () => {
     const [fullName, setFullName] = useContext(UserDataContext);
     return (
         <div
-            className="relative h-[100vh] flex items-center p-[2rem]"
+            className="relative h-[100vh] flex items-center md:p-[2rem]"
             id="QuizBody"
         >
             <div
-                className="absolute h-[100vh] w-[50vw] right-0 p-0 m-0"
+                className="absolute h-[100vh] w-[100vw] md:w-[50vw] right-0 left-0 md:left-[auto]"
                 style={{
                     background: `url(https://media.istockphoto.com/id/1181024482/photo/medical-finance-insurance.jpg?s=612x612&w=0&k=20&c=vFUgCpg5RMQwgbZSds6A5oZKP1Vn-cdwtAOW6DwxY5A=)`,
                     backgroundSize: "contain",
@@ -23,7 +23,7 @@ const QuizIntro = () => {
                     backgroundRepeat: "no-repeat",
                 }}
             ></div>
-            <div className="absolute h-[75vh] text-left flex flex-col justify-center gap-32">
+            <div className="px-[1rem] md:px-[0] absolute h-[75vh] text-left flex flex-col justify-center gap-32">
                 <h1 className="capitalize text-h1">
                     Hello {fullName.firstName}!
                 </h1>
@@ -38,6 +38,7 @@ const QuizIntro = () => {
                 <Button
                     text="let's go"
                     clickFunction={() => scrollToElement("que-1")}
+                    customClass="bg-black md:bg-inherit text-mainBg md:text-black"
                 />
             </div>
         </div>

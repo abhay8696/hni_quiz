@@ -22,6 +22,9 @@
     --skyBlue: #3fa2f6;
     --lightBlue: #96c9f4;
 }
+* {
+    box-sizing: border-box;
+}
 
 a {
     font-weight: 500;
@@ -90,6 +93,32 @@ input[type="radio"]:checked::after {
     height: 10px; /* Inner circle size */
     border-radius: 50%; /* Circle shape */
     background: #00000086; /* Inner circle color */
+}
+
+/* For Chrome, Edge, Safari */
+::-webkit-scrollbar {
+    width: 12px; /* Width of the scrollbar */
+    height: 12px; /* Height for horizontal scrollbar */
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #888; /* Scrollbar thumb (handle) color */
+    border-radius: 10px; /* Round the corners */
+    border: 3px solid transparent; /* Adds padding around the thumb */
+    background-clip: padding-box; /* Prevents border overlap */
+    cursor: pointer;
+}
+
+::-webkit-scrollbar-track {
+    background-color: #f1f1f1; /* Track color */
+    border-radius: 10px;
+}
+
+/* For screens 768px and above, change the background position */
+@media (min-width: 768px) {
+    .bgImg-bottom {
+        background-position: bottom !important;
+    }
 }
 
 @media (prefers-color-scheme: light) {

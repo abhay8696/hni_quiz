@@ -5,7 +5,7 @@ const Button = (props) => {
 
     return (
         <button
-            className={`Button bg-inherit ${customClass} w-[100px]  border border-primary cursor-pointer outline-none`}
+            className={`Button ${customClass} w-[100px]  border border-primary cursor-pointer outline-none`}
             onClick={clickFunction}
             type={formButton && "submit"}
         >

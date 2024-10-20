@@ -78,10 +78,10 @@ const Result = () => {
         let arr = [];
 
         for (let i = 0; i < result.score; i++)
-            arr.push(<img src={filledStar} className="w-[50px]" />);
+            arr.push(<img src={filledStar} className="w-[30px] md:w-[50px]" />);
 
         for (let i = result.score; i < 5; i++)
-            arr.push(<img src={emptyStar} className="w-[50px]" />);
+            arr.push(<img src={emptyStar} className="w-[30px] md:w-[50px]" />);
 
         // console.log(arr);
         return arr;
@@ -99,15 +99,15 @@ const Result = () => {
     );
 
     return (
-        <div className="p-[2rem] h-[100vh] flex items-center" id={"result"}>
-            <div className="min-h-[75vh] text-left flex flex-col justify-center gap-8">
+        <div className="md:p-[1rem] h-[100vh] flex items-center" id={"result"}>
+            <div className="px-[1rem] md:px-[0] min-h-[75vh] text-left flex flex-col justify-center gap-8">
                 <h1 onClick={() => console.log(randomQuestions)}>
                     {result.msg}
                 </h1>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
                     <h1
                         onClick={() => console.log(randomQuestions)}
-                        className="font-thin"
+                        className="font-thin text-h3 md:text-h1"
                     >
                         your score:{" "}
                     </h1>
