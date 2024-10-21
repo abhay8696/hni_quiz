@@ -10,6 +10,7 @@ import QuizBody from "./components/QuizBody/QuizBody";
 import { scrollToElement } from "./helperFunctions";
 import Result from "./components/Result/Result";
 import { questionsArray } from "./QuestionsArray";
+import HNILink from "./components/Links/HNILink";
 
 function App() {
     const [fullName, setFullName] = useState({
@@ -52,6 +53,7 @@ function App() {
                         value={[randomQuestions, setRandomQuestions]}
                     >
                         <QuizBody />
+                        <HNILink />
                     </RandomQuestionsContext.Provider>
                 </UserDataContext.Provider>
             </div>

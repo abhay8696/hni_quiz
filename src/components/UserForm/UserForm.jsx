@@ -44,7 +44,7 @@ const UserForm = (props) => {
             id="userForm"
         >
             <div
-                className="bgImg-bottom absolute h-[100vh] w-[100vw] md:w-[50vw] right-0 "
+                className="bgImg-bottom absolute h-[100vh] w-[100vw] md:w-[50vw] md:hidden right-0 "
                 style={{
                     background: `url(https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22594_16539922388967007.jpg)`,
                     backgroundSize: "contain",

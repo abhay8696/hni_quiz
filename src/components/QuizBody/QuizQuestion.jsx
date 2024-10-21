@@ -3,6 +3,7 @@ import Button from "../Button/Button";
 import { scrollToElement } from "../../helperFunctions";
 import { RandomQuestionsContext } from "../../Contexts/AllContexts";
 import BGIMG from "../BGIMG/BGIMG";
+import HNILink from "../Links/HNILink";
 
 const QuizQuestion = (props) => {
     //props

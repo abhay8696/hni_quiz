@@ -15,7 +15,7 @@ const QuizIntro = () => {
             id="QuizBody"
         >
             <div
-                className="absolute h-[100vh] w-[100vw] md:w-[50vw] right-0 left-0 md:left-[auto]"
+                className="absolute h-[100vh] w-[100vw] md:hidden right-0 left-0 md:left-[auto]"
                 style={{
                     background: `url(https://media.istockphoto.com/id/1181024482/photo/medical-finance-insurance.jpg?s=612x612&w=0&k=20&c=vFUgCpg5RMQwgbZSds6A5oZKP1Vn-cdwtAOW6DwxY5A=)`,
                     backgroundSize: "contain",

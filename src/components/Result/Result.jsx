@@ -15,6 +15,7 @@ import {
 //assets
 import emptyStar from "../../assets/emptyStar.svg";
 import filledStar from "../../assets/filledStar.svg";
+import HNIButton from "../Links/HNIButton";
 
 const Result = () => {
     const [result, setResult] = useState({
@@ -114,9 +115,10 @@ const Result = () => {
                     <div className="flex gap-4">{displayStars()}</div>
                     <p className="font-thin">{result.score} / 5</p>
                 </div>
-                <div className="flex gap-4">
+                <div className="flex flex-wrap gap-4">
                     {finishButton}
                     {answersButton}
+                    <HNIButton />
                 </div>
             </div>
         </div>
