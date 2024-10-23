@@ -86,9 +86,9 @@ export const sendMessageToOwner = async (name, customerContact, score) => {
 };
 
 export const addToFirestore = async (data) => {
-    console.log("saving to firestore");
+    // console.log("saving to firestore");
     try {
-        await addDoc(collection(db, "users"), data);
+        await addDoc(collection(db, "production_users"), data);
     } catch (error) {
         console.error("Error saving user data:", error);
         alert("Failed to save user data");
