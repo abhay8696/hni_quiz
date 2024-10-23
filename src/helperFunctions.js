@@ -1,9 +1,10 @@
 import axios from "axios";
 import { db } from "./firebaseConfig";
-import { collection, addDoc } from "firebase/firestore";
+import { collection, addDoc, getDocs } from "firebase/firestore";
 
 // scrollToElement.js
 export const scrollToElement = (id) => {
+    console.log("scrolling to ", id);
     const element = document.getElementById(id);
     if (element) {
         element.scrollIntoView({ behavior: "smooth", block: "start" });
@@ -93,4 +94,46 @@ export const addToFirestore = async (data) => {
         console.error("Error saving user data:", error);
         alert("Failed to save user data");
     }
+};
+
+export const getAllUsers = async () => {
+    try {
+        const querySnapshot = await getDocs(collection(db, "users"));
+        const users = querySnapshot.docs.map((doc) => ({
+            id: doc.id,
+            ...doc.data(),
+        }));
+        console.log("Fetched Users:", users);
+        return users;
+    } catch (error) {
+        console.error("Error fetching users:", error);
+        alert("Failed to fetch user data");
+        return [];
+    }
+};
+
+export const downloadCSV = (users) => {
+    // Convert user data to CSV format
+    const headers = ["First Name", "Last Name", "Contact"];
+    const rows = users.map((user) => [
+        user.firstName,
+        user.lastName,
+        user.contact,
+    ]);
+
+    const csvContent = [
+        headers.join(","), // Add headers row
+        ...rows.map((row) => row.join(",")), // Add data rows
+    ].join("\n");
+
+    // Create Blob and trigger download
+    const blob = new Blob([csvContent], { type: "text/csv" });
+    const url = URL.createObjectURL(blob);
+    const link = document.createElement("a");
+    link.href = url;
+    link.download = "users.csv";
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
+    URL.revokeObjectURL(url);
 };

@@ -65,7 +65,7 @@ const QuizQuestion = (props) => {
                     className="my-4 ml-4"
                     onChange={handleChange}
                 />
-                <label for={id} className="flex-1 py-4">
+                <label htmlFor={id} className="flex-1 py-4">
                     {value}
                 </label>
             </div>
