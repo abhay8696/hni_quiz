@@ -43,7 +43,7 @@ const UserForm = (props) => {
         else {
             handleUserForm(fullName);
             //add user data to firestore database
-            // await addToFirestore(fullName);
+            await addToFirestore(fullName);
         }
     };
     return (
