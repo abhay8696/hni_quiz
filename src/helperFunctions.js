@@ -1,6 +1,7 @@
 import axios from "axios";
 import { db } from "./firebaseConfig";
 import { collection, addDoc, getDocs } from "firebase/firestore";
+const collectionName = import.meta.env.VITE_COLLECTION_NAME; //firestore collection name, changes with environment
 
 // scrollToElement.js
 export const scrollToElement = (id) => {
@@ -89,7 +90,7 @@ export const sendMessageToOwner = async (name, customerContact, score) => {
 export const addToFirestore = async (data) => {
     // console.log("saving to firestore");
     try {
-        await addDoc(collection(db, "production_users"), data);
+        await addDoc(collection(db, collectionName), data);
     } catch (error) {
         console.error("Error saving user data:", error);
         alert("Failed to save user data");
@@ -98,7 +99,7 @@ export const addToFirestore = async (data) => {
 
 export const getAllUsers = async () => {
     try {
-        const querySnapshot = await getDocs(collection(db, "users"));
+        const querySnapshot = await getDocs(collection(db, collectionName));
         const users = querySnapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
