@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
+import { addToFirestore } from "../../helperFunctions";
 
 const UserForm = (props) => {
     //props
@@ -12,6 +13,7 @@ const UserForm = (props) => {
         contact: "",
     });
     const [nameError, SetNameError] = useState(false);
+    const [lastNameError, SetLastNameError] = useState(false);
     const [contactError, SetContactError] = useState(false);
 
     //functions
@@ -19,6 +21,7 @@ const UserForm = (props) => {
         const { name, value } = event.target;
         if (name === "firstName") SetNameError(false);
         if (name === "contact") SetContactError(false);
+        if (name === "lastName") SetLastNameError(false);
         setFullName({ ...fullName, [name]: value });
     };
 
@@ -32,11 +35,16 @@ const UserForm = (props) => {
         return String(input).length !== 10;
     };
 
-    const handleSubmit = (event) => {
+    const handleSubmit = async (event) => {
         event.preventDefault();
         if (notValidName(fullName.firstName)) SetNameError(true);
+        else if (notValidName(fullName.lastName)) SetLastNameError(true);
         else if (notValidContact(fullName.contact)) SetContactError(true);
-        else handleUserForm(fullName);
+        else {
+            handleUserForm(fullName);
+            //add user data to firestore database
+            await addToFirestore(fullName);
+        }
     };
     return (
         <div
@@ -85,7 +93,7 @@ const UserForm = (props) => {
                                     {nameError && "First name is required"}
                                 </p>
                             </div>
-                            <div>
+                            <div className="relative">
                                 <input
                                     type="text"
                                     name="lastName"
@@ -94,8 +102,15 @@ const UserForm = (props) => {
                                     onChange={handleChange}
                                     autoComplete="off"
                                     placeholder="Last Name"
-                                    className={`text-black capitalize text-h5 sm:text-h4 py-1 bg-inherit border-b border-primary outline-none`}
+                                    className={`text-black capitalize text-h5 sm:text-h4 py-1 bg-inherit border-b ${
+                                        nameError
+                                            ? "border-red-600"
+                                            : "border-primary"
+                                    } outline-none`}
                                 />
+                                <p className="absolute text-left text-red-600">
+                                    {lastNameError && "Last name is required"}
+                                </p>
                             </div>
                             <div className="relative">
                                 <input

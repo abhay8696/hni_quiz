@@ -1,4 +1,6 @@
 import axios from "axios";
+import { db } from "./firebaseConfig";
+import { collection, addDoc } from "firebase/firestore";
 
 // scrollToElement.js
 export const scrollToElement = (id) => {
@@ -81,4 +83,14 @@ export const sendMessageToOwner = async (name, customerContact, score) => {
     const res = await axios.post(url, body, headers);
 
     console.log(res.data);
+};
+
+export const addToFirestore = async (data) => {
+    console.log("saving to firestore");
+    try {
+        await addDoc(collection(db, "users"), data);
+    } catch (error) {
+        console.error("Error saving user data:", error);
+        alert("Failed to save user data");
+    }
 };
