@@ -4,13 +4,15 @@ import {
     RandomQuestionsContext,
     UserDataContext,
 } from "./Contexts/AllContexts";
+//styles
 import "./App.css";
+//components
 import UserForm from "./components/UserForm/UserForm";
 import QuizBody from "./components/QuizBody/QuizBody";
-import { scrollToElement } from "./helperFunctions";
-import Result from "./components/Result/Result";
-import { questionsArray } from "./QuestionsArray";
 import HNILink from "./components/Links/HNILink";
+//helper functions
+import { scrollToElement } from "./helperFunctions";
+import { questionsArray } from "./QuestionsArray";
 
 function App() {
     const [fullName, setFullName] = useState({
