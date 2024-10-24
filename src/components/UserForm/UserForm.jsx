@@ -1,6 +1,8 @@
 import React, { useState } from "react";
 import Button from "../Button/Button";
 import { addToFirestore } from "../../helperFunctions";
+//assets
+import qrCodeImg from "../../assets/qrCode.jpeg";
 
 const UserForm = (props) => {
     //props
@@ -46,20 +48,36 @@ const UserForm = (props) => {
             await addToFirestore(fullName);
         }
     };
+
+    const wealthImg = (
+        <div
+            className="bgImg-bottom absolute h-[100vh] w-[100vw] md:w-[50vw] md:hidden right-0 "
+            style={{
+                background: `url(https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22594_16539922388967007.jpg)`,
+                backgroundSize: "contain",
+                backgroundPosition: "top",
+                backgroundRepeat: "no-repeat",
+            }}
+        ></div>
+    );
+
+    const qrCode = (
+        <div className="bgImg-bottom absolute flex justify-end w-[50vw] md:w-[50vw] bottom-0 right-0 ">
+            <img
+                src={qrCodeImg}
+                alt="qr Code Image"
+                className="max-h-[50vh] hidden md:block aspect-square"
+            />
+        </div>
+    );
+
     return (
         <div
             className="md:p-[2rem] h-[100vh] w-[100vw] flex items-end md:items-center justify-start relative"
             id="userForm"
         >
-            <div
-                className="bgImg-bottom absolute h-[100vh] w-[100vw] md:w-[50vw] md:hidden right-0 "
-                style={{
-                    background: `url(https://d2jx2rerrg6sh3.cloudfront.net/images/Article_Images/ImageForArticle_22594_16539922388967007.jpg)`,
-                    backgroundSize: "contain",
-                    backgroundPosition: "top",
-                    backgroundRepeat: "no-repeat",
-                }}
-            ></div>
+            {wealthImg}
+            {qrCode}
             <div className="px-[1rem] md:px-[0] absolute flex flex-col justify-start h-[60vh] md:h-[75vh] w-[calc(100vw_-_2rem)]">
                 <h1 className="text-h2 sm:text-h1 text-left font-bold">
                     Welcome to HNI Quiz!

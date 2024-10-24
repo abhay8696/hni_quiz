@@ -29,10 +29,10 @@ export const questionsArray = [
         options: {
             a: "₹10 trillion",
             b: "₹20 trillion",
-            c: "₹40 trillion",
+            c: "₹70 trillion",
             d: "₹60 trillion",
         },
-        answer: "₹40 trillion",
+        answer: "₹70 trillion",
     },
     {
         uid: uuidv4(),
@@ -220,5 +220,60 @@ export const questionsArray = [
             d: "Vehicles",
         },
         answer: "Cash and savings",
+    },
+    {
+        uid: uuidv4(),
+        que: "What is SGB?",
+        options: {
+            a: "Sovereign Gold Bonds",
+            b: "State Government Bonds",
+            c: "Small Growth Bonds",
+            d: "Special Government Bonds",
+        },
+        answer: "Sovereign Gold Bonds",
+    },
+    {
+        uid: uuidv4(),
+        que: "Which gives higher returns in the long term?",
+        options: {
+            a: "Equity",
+            b: "Debt",
+            c: "FD",
+            d: "Bonds",
+        },
+        answer: "Equity",
+    },
+    {
+        uid: uuidv4(),
+        que: "What does RTGS stand for?",
+        options: {
+            a: "Real Time Gross Settlement",
+            b: "Rapid Transfer Grant Scheme",
+            c: "Recurring Transaction Gateway System",
+            d: "Regional Transfer Group Services",
+        },
+        answer: "Real Time Gross Settlement",
+    },
+    {
+        uid: uuidv4(),
+        que: "What is the governing body of insurance in India?",
+        options: {
+            a: "SEBI",
+            b: "RBI",
+            c: "IRDAI",
+            d: "NABARD",
+        },
+        answer: "IRDAI",
+    },
+    {
+        uid: uuidv4(),
+        que: "What is the meaning of Maturity Amount in Life Insurance?",
+        options: {
+            a: "The amount which is paid on death of the Insured person",
+            b: "The amount which is paid at the end of the policy period if the Insured person is alive",
+            c: "The amount of money paid by the Insured person",
+            d: "None of the above",
+        },
+        answer: "The amount which is paid at the end of the policy period if the Insured person is alive",
     },
 ];
