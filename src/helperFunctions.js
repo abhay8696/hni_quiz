@@ -90,7 +90,8 @@ export const sendMessageToOwner = async (name, customerContact, score) => {
 export const addToFirestore = async (data) => {
     // console.log("saving to firestore");
     try {
-        await addDoc(collection(db, collectionName), data);
+        // await addDoc(collection(db, collectionName), data); //firestore collection for main website
+        await addDoc(collection(db, "personalUsers"), data); //firestore collection for users visiting through my personal portfolio/resume/gitbranch
     } catch (error) {
         console.error("Error saving user data:", error);
         alert("Failed to save user data");
@@ -99,7 +100,8 @@ export const addToFirestore = async (data) => {
 
 export const getAllUsers = async () => {
     try {
-        const querySnapshot = await getDocs(collection(db, collectionName));
+        // const querySnapshot = await getDocs(collection(db, collectionName)); //firestore collection for main website
+        const querySnapshot = await getDocs(collection(db, "personalUsers")); //firestore collection for users visiting through my personal portfolio/resume/gitbranch
         const users = querySnapshot.docs.map((doc) => ({
             id: doc.id,
             ...doc.data(),
