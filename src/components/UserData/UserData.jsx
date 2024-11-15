@@ -64,6 +64,9 @@ const UserData = () => {
                     />
                 ) : null}
             </div>
+            <h4 className="flex items-center px-2 py-1 uppercase text-sm text-white bg-black">
+                Total Users: {users.length || null}
+            </h4>
             {displayTable()}
         </div>
     );
